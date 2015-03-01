@@ -1,0 +1,10 @@
+[Unit]
+Description=Aria2 Service
+After=network.target
+
+[Service]
+User=aria2
+ExecStart=/usr/bin/aria2c --enable-rpc --rpc-listen-all --save-session=/home/aria2/.config/aria2/session.lock --input-file=/home/aria2/.config/aria2/session.lock --conf-path=/home/aria2/.config/aria2/aria2.conf
+
+[Install]
+WantedBy=multi-user.target
